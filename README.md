@@ -1,3 +1,5 @@
+<img align="center" height="200" src="https://github.com/Ishaan28malik/Hacktoberfest-2020/blob/master/Assets/Selection_026.png"/>
+
 # Hacktoberfest 2020 - Newbie
 
 This is a intermediate-level project to help you get started with your
