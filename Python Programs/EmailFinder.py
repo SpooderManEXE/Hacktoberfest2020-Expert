@@ -1,7 +1,7 @@
 #! python3
 # emailInClipboard.py - Finds email addresses on the clipboard and copies them to the clipboard
 # Usage: Copy some text call the program
-# Example: >>> numberOnClipboard.py
+# Example: >>> EmailFinder.py
 
 import pyperclip, re, sys
 
