@@ -56,4 +56,4 @@ def _is_repeating(password):
 if __name__ == '__main__':
     print generate_random_password(random.randint(6, 30), SEQUENCE)
 
-#Subscribe to StuntStorm Production on Youtube
+
