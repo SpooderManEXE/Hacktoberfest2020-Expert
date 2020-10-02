@@ -21,11 +21,11 @@ P.S. Star and share this repository, if you had fun!
 - Add your programs/code to respective folders of each programming language.
 
 ## Ideas for contributions
-
+:sparkles:
 - Add your own projects to the 'Helpful Material Page'
 
 ## FAQs
-
+:sparkles:
 - Who can contribute?
   - Anyone with a github account and who is signed up for [hacktoberfest](https://hacktoberfest.digitalocean.com/) :).
 
