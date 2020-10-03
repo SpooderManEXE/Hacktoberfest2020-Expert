@@ -12,7 +12,14 @@ int main()
  { 
   root1=(-b+sqrt(d))/(2.0*a);
   root2=(-b-sqrt(d))/(2.0*a);
-  printf("\n Root1 = %f\t\t Root2 = %f\n",root1,root2);
+  if( root1!= root2){
+   {
+     printf("\n Root1 = %f\t\t Root2 = %f\n",root1,root2);
+   }
+   elseif{
+     printf("\n Root1 = %f\t\t",root1);
+    
+   }
  }
  getchar();
  return(0);
