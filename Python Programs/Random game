@@ -1,0 +1,12 @@
+import random
+ 
+hidden = random.randrange(1,5)
+ 
+guess = int(input("Please enter your guess(1-5): "))
+ 
+if guess == hidden:
+    print("Hit!")
+elif guess < hidden:
+    print("Your guess is too low")
+else:
+    print("Your guess is too high")
