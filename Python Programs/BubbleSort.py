@@ -21,6 +21,6 @@ for i in range(0, n-1):
 			values[j+1] = values[j]
 			values[j] = temp
 
-# print's the sorted value
+# print's the sorted values
 for i in range(0, n):
 	print(values[i], " ", end="")
