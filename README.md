@@ -33,7 +33,7 @@ P.S. Star and share this repository, if you had fun!
   - 4
 
 - How do I track my progress to get an awesome shirt from Hacktoberfest 2020?
-  - go to : [https://hacktoberfest.digitalocean.com/stats/](https://hacktoberfest.digitalocean.com/stats/)
+  - go to : [https://hacktoberfest.digitalocean.com/profile/](https://hacktoberfest.digitalocean.com/profile/)
 
 - What is the duration of Hacktoberfest 2020?
   - It is from 1st october to 31st october 2020.
