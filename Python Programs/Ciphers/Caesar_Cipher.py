@@ -9,7 +9,7 @@ string_input=str(input("Enter your text that you want to convert:"))
 key=int(input("Enter the key value:"))
 
 #initialise an empty variable output to store the output
-outpt=""
+output=""
 n=len(string_input)                              #calculates the length of string so that loop works according to the length of string.
 
 for i in range(n):
@@ -17,6 +17,6 @@ for i in range(n):
     location=alphabets.find(character)           #to find the location as per alphabets. 
     new_loc=(location+key)%26                    #after shifting acording to key it stores the new location.
     print("character",character,"location",location,"new location",new_loc)
-    outpt+=alphabets[new_loc]                    #assigns all the result to output
+    output+=alphabets[new_loc]                    #assigns all the result to output
 
-print(outpt)                                     #prints the final output
+print(output)                                     #prints the final output
