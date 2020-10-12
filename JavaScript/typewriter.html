@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter effect</title>
+</head>
+<body onload="typewriter()">
+    <div id="type"></div>
+    <script>
+        var text="Hello! This is a typewriter effect.";
+        var speed=60, i=0;
+        function typewriter(){
+            if(i<text.length){
+            document.getElementById("type").innerHTML+=text.charAt(i);
+            i++;
+            setTimeout(typewriter, speed);
+            console.log(funct);
+            }
+        }
+    </script>
+</body>
+</html>
