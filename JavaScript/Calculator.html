@@ -1,0 +1,137 @@
+<html>
+
+<head>
+	<title>Calculator</title>
+	<script>
+	var f = 0;
+
+	function dis(n) {
+		if(n == '+' || n == '-' || n == '*' || n == '/') {
+			f = 1;
+			document.getElementById("opr").value = n;
+			exit(0);
+		}
+		if(f == 0) {
+			document.getElementById("op1").value += n;
+		}
+		if(f == 1) {
+			document.getElementById("op2").value += n;
+		}
+	}
+
+	function calc() {
+		var result;
+		var opr = document.getElementById("opr").value;
+		var op1 = document.getElementById("op1").value;
+		var op2 = document.getElementById("op2").value;
+		if(opr == '+') {
+			result = parseFloat(op1) + parseFloat(op2);
+			document.getElementById("out").value = result;
+		}
+		if(opr == '-') {
+			result = parseFloat(op1) - parseFloat(op2);
+			document.getElementById("out").value = result;
+		}
+		if(opr == '*') {
+			result = parseFloat(op1 * op2);
+			document.getElementById("out").value = result;
+		}
+		if(opr == '/') {
+			result = parseFloat(op1 / op2);
+			document.getElementById("out").value = result;
+		}
+	}
+
+	function clr() {
+		document.getElementById("out").value = " ";
+		document.getElementById("op1").value = " ";
+		document.getElementById("op2").value = " ";
+		document.getElementById("opr").value = " ";
+		f = 0;
+	}
+	</script>
+</head>
+
+<body background="img/b.jpg" style="color: aliceblue">
+	<h1 align=center>CALCULATOR</h1>
+	<br>
+	<table align=center style="font-family: fantasy;background-color:deeppink">
+		<tr>
+			<td>
+				<input type=text id="op1" style="width: 60px;height: 40px;">
+			</td>
+			<td>
+				<input type=text id="opr" style="width: 60px;height: 40px;">
+			</td>
+			<td>
+				<input type=text id="op2" style="width: 60px;height: 40px;">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input id="out" type=text style="width: 190px;height: 40px;" />
+			</td>
+			<td>
+				<input id="c" type=button value=C style="width: 60px;height: 40px;background-color: grey;color: white" onclick="javascript:clr()" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type=button value=7 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=8 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=9 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=+ style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type=button value=4 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=5 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=6 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=- style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type=button value=1 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=2 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=3 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=* style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type=button value=0 style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value=. style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+			<td>
+				<input type=button value==s tyle="width: 60px;height: 40px;" onclick="javascript:calc()" />
+			</td>
+			<td>
+				<input type=button value=/ style="width: 60px;height: 40px;" onclick="dis(value)" />
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
