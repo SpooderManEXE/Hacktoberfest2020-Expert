@@ -18,6 +18,7 @@ while True:
         print("#           #")
         print("#############")
     else:
+
         print("Thanks For Playing")
         break
 
@@ -44,3 +45,4 @@ while True:
 
     elif number == 8:
         print("My sources say no")
+
