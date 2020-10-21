@@ -9,9 +9,9 @@
 	   ext[v] = timer++;
     }
 		
-	vector<LL> flattenedTree(2*n);
+	vector<long long> flattenedTree(2*n);
        for(int u = 0; u < n; u++)
         {
-           flattenedTree[entr[u]] = s[u];
+           flattenedTree[entr[u]] = s[u]; 
            flattenedTree[ext[u]] = -s[u]; 
         }
