@@ -1,0 +1,232 @@
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding:0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /***************CSS FOR IMAGE SLIDER*****************/
+        .img-slider .slider-image{
+            display: none;
+            position: relative;
+        }
+        .img-slider .slider-image .slider-text{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            bottom: 10%;
+            left: 50%;
+            font-weight: bold;
+            font-size: 2.5rem;
+            color:#fff;
+        }
+        .img-slider .slider-image:after{
+            content:'';
+            position:absolute;
+            right:0; 
+            top:0;
+            width:15%;
+            height:100%;
+            display:inline-block;
+            background: linear-gradient(to right, transparent 0%,rgba(0,0,0,0.6) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 );
+        }
+        .img-slider .slider-image:before{
+            content:'';
+            position:absolute;
+            left:0; 
+            top:0;
+            width:15%;
+            height:100%;
+            display:inline-block;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 );
+        }
+        .img-slider .slider-image:first-child{
+            display: block;
+        }
+        .img-slider{
+            margin: auto;
+            padding: 0px;
+            width: 100%;
+            position: relative;
+        }
+        .img-slider .slider-image{
+            position: relative;
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+        .img-slider .slider-image img{
+            width: 100%;
+            display: inline-block;
+        }
+        .fade{
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+        @keyframes fade{
+            from {opacity: 0.5;}
+            to:{opacity: 1;}
+        }
+        .img-slider .button, .card-deck .button{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top:50%;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .img-slider .button a span{
+            color: #ffffff;
+            transition: 0.5s ease;
+        }
+        .img-slider .button a span:hover{
+            color: #000000;
+        }
+        .img-slider .button-left{
+            left:3%;
+        }
+        .img-slider .button-right{
+            right:3%;
+        }
+        .pointer{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            bottom: 5%;
+            left:50%;
+        }
+        .pointer .dot{
+            display: inline-block;
+            cursor: pointer;
+        }
+        .pointer .dot i{
+            color: #f1f1f1;
+        }
+        .pointer .dot .active{
+              background-image: -webkit-linear-gradient(to bottom right, #E259a3, #F75288);
+              background-image: linear-gradient(to bottom right, #E259a3, #F75288);
+              color:transparent;
+              -webkit-background-clip: text;
+              background-clip: text;
+        }
+        /***************CSS FOR CARD SLIDER*****************/
+        .card-slider .card-deck{
+            position: relative;
+             display: flex;
+             justify-content: space-around;
+             width: 98%;
+             margin: auto;
+        }
+        .card-slider .card{
+            width: 3.1%;
+            transition: 0.5s ease;
+            flex:inherit !important;
+            position: relative;
+            right: 0;
+            cursor: pointer;
+            transition: 0.5s ease;
+            box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+            background-color: #f1f1f1;
+            left: 0;
+        }
+        .card-slider .left-move{
+            left: auto;
+            right: 350px;
+        }
+        .card-slider .right-move{
+            right: auto;
+            left:350px;
+        }
+        .card-slider .card-container{
+            overflow: hidden;
+            margin: 20px;
+            padding-bottom: 26px;
+        }
+        .card-slider .card-slide{
+            top: 0%;
+            width: 999%;
+            display: flex;
+            left: 0%;
+            transition: 0.5s ease;
+        }
+        .card-slider .card:hover{
+            
+        }
+        .card-slider .card-deck  .button a span{
+            color: #000000;
+            transition: 0.5s ease;
+        }
+        .card-slider .card-deck .button a span:hover{
+            color: red;
+        }
+        .card-slider .card-deck .button-left{
+            left:2%;
+        }
+        .card-slider .card-deck  .button-right{
+            right:0%;
+        }
+        .card-slider .card-deck .card .image-container{
+            position: relative;
+        }
+        .card-slider .card-deck .card .event-name{
+            background-color: rgba(0,0,0,0.3);
+            position: absolute;
+            top: 89%;
+            width: 100%;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: capitalize;
+            text-align: center;
+            padding: 5px 0px;
+            transform: translateY(-50%);
+        }
+        .card-slider .card-deck .card .event-location .location span{
+            font-size: 20px;
+        }
+        
+        
+        /***************CSS FOR SLDIER MEDIA QUERY*****************/
+
+        @media only screen and (max-width:500px){
+            .img-slider .slider-image img{
+                height: 200px;
+            }
+            .img-slider .slider-image .slider-text{
+                font-size: 0.7rem;
+                bottom: 25%;
+                text-transform: capitalize;
+            }
+            .event-tab .event-container .card .card-body{
+                padding: 0.5rem;
+            }
+            .event-tab .event-container .card .date-tab , .event-tab .event-container .card .day-tab{
+                font-size: 0.9rem;
+            }
+            .event-tab .event-container .card span{
+                bottom: -26%;
+            }
+        }
+        @media only screen and (max-width: 1190px){
+            .card-slider .card{
+                width: 3.04%;
+            }
+        }
+        @media only screen and (max-width: 709px){
+            .card-slider .card{
+                width: 4.5%;
+            }
+        }
+        @media only screen and (max-width:576px){
+            .card-slider .card{
+                margin-right: 15px;
+                margin-bottom: 0;
+                margin-left: 15px;
+                width: 9.4%;
+            }
+        }
+        /***************TO ENABLE BOOTSTRAP ANIMATION*****************/
+        @media (prefers-reduced-motion: reduce){
+            .carousel-item {
+                transition: transform 2s ease, opacity .5s ease-out;
+            }
+        }

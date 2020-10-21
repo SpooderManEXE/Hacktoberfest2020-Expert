@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIDESHOW</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="slider.css">
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="img-slider ">
+        <!--LEFT RIGHT BUTTON-->
+        <div class="button button-left" onclick="left()">
+            <a ><span class="material-icons">arrow_back_ios</span></a>
+        </div>
+        <div class="button button-right" onclick="right()">
+            <a ><span class="material-icons">arrow_forward_ios</span></a>
+        </div>
+        <!-- Full-width images -->
+        <div class="slider-image ">
+        	<div class="slider-text">FIRST SLIDE</div>
+          	<img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        </div>
+      
+        <div class="slider-image ">
+        	<div class="slider-text">SECOND SLIDE</div>
+          <img src="https://www.w3schools.com/howto/img_snow_wide.jpg">
+        </div>
+      
+        <div class="slider-image ">
+        	<div class="slider-text">THIRD SLIDE</div>
+          <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg">
+        </div>
+      
+        <div class="slider-image ">
+          <div class="slider-text">FOURTH SLIDE</div>
+            <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        </div>
+        <!-- The dots/circles -->
+        <div class="pointer">
+            <div class="dot" onclick="move(0)"><span class="material-icons">stop_circle</span></div>
+            <div class="dot" onclick="move(1)"><span class="material-icons">stop_circle</span></div>
+            <div class="dot" onclick="move(2)"><span class="material-icons">stop_circle</span></div>
+            <div class="dot" onclick="move(3)"><span class="material-icons">stop_circle</span></div>
+        </div>
+      </div>
+      <br>
+
+      <!--BOOTSTRAP CARD SLIDER-->
+
+    
+
+ 
+
+
+</body>
+
+<script src="slider.js"></script>
+
+
+</html>
