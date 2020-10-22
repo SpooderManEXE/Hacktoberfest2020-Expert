@@ -1,0 +1,20 @@
+SCRAPING NUMBERS FROM HTML USING BEAUTIFULSOUP 
+
+The folder bs4 contains the BeautifulSoup files used to run this program if they are not installed in the device beforehand.
+
+This python program uses urllib to read the HTML from the input URL of data files, and parse the data, extracting numbers and compute the sum of the numbers in the file.
+
+Input Data Format
+
+The line from the file which I have worked on is of the form:
+
+<tr><td>Modu</td><td><span class="comments">90</span></td></tr>
+<tr><td>Kenzie</td><td><span class="comments">88</span></td></tr>
+<tr><td>Hubert</td><td><span class="comments">87</span></td></tr>
+
+The program finds all the <span> tags in the file and pulls out the numbers from the tag and sums the numbers.
+
+The sample URL's of the data files are:
+1. http://py4e-data.dr-chuck.net/comments_42.html (o/p: Count=50, Sum=2553)
+2. http://py4e-data.dr-chuck.net/comments_975457.html (o/p: Count=50, Sum=2726)
+

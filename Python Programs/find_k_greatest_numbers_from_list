@@ -1,0 +1,23 @@
+# find k greatest number from a list
+# i/p : arr = [7,10,4,3,20,15], k = 3
+# o/p : [20,15,10]
+
+import heapq
+k=3
+a = [7,10,4,3,20,15]
+r =[]
+
+
+for i,v in enumerate(a):
+  heapq.heappush(r,v)
+  if  k<(i+1):
+    heapq.heappop(r)
+     
+arr=[heapq.heappop(r) for i in range(k)]  
+ 
+print(arr)
+
+
+
+
+    
