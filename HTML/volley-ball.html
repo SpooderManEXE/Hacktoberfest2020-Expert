@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+<canvas id="meucanvas" width="800" height="400" style="border: 2px black solid">
+	Canvas não suportado
+</canvas>
+<script type="text/javascript">
+	
+	var c = document.getElementById("meucanvas");
+	var ctx = c.getContext("2d");
+	var yBall = 340;
+	var xBall = 150;
+	var	auxBall = 149;
+	var colorBall = 'red';
+	var interval = 7;
+	var p1 = 0;
+	var p2 = 0;
+
+	ctx.fillRect(395,180,10,220);
+	
+	function drawPoints(){
+		ctx.clearRect(380,0,50,32)
+		ctx.font = '30px Arial';
+		ctx.strokeText(p1+':'+p2,380,30);
+	}
+	function drawText1(){
+		ctx.font = '20px Arial';
+		ctx.strokeText('TOC!',50,340);
+		ctx.clearRect(700,315,50,30);
+	}
+	function drawText2(){
+		ctx.font = '20px Arial';
+		ctx.strokeText('TOC!',700,340);
+		ctx.clearRect(50,315,50,30);
+	}
+	function drawBall(){
+		ctx.beginPath();
+		ctx.fillStyle = colorBall;
+		ctx.arc(xBall,yBall,35,0,2*Math.PI);
+		ctx.fill();
+	}
+	function route(){
+		ctx.clearRect(xBall-40,yBall-40,80,80);
+		drawBall();
+		if (xBall<=397 && auxBall<xBall){
+			xBall++;
+			yBall--;
+			auxBall++;
+		}
+		if(xBall>397 && auxBall<xBall){
+			xBall++;
+			yBall++;
+			auxBall++;
+		}
+		if (xBall>=650) {
+			xBall--;
+			yBall--;
+			auxBall++;
+			drawText2();
+			p2++;
+			drawPoints();
+		}
+		if (xBall>397 && auxBall>xBall) {
+			xBall--;
+			yBall--;
+			auxBall--;
+		}
+		if (xBall<=397 && auxBall>xBall) {
+			xBall--;
+			yBall++;
+			auxBall--;
+		}
+		if (xBall<=150) {
+			xBall++;
+			yBall--;
+			auxBall--;
+			drawText1();
+			p1++;
+			drawPoints();
+		}
+		
+	}
+	function animate(){
+		setInterval(route,interval);
+	}
+	drawPoints();
+	animate();
+</script>
+</body>
+</html>	
