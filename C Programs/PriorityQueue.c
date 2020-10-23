@@ -1,125 +1,103 @@
-/*It is a data structure code...topic named Priority Queue
-We can add elements in any order by specifying the priority of the elements in queue*/
+#include <stdio.h>
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
-int pQ[20][30]; 
-int rear = -1;
-int front = -1;
-
-void insert(int, int);
-int pop1();
-void display();
-void setValue(int, int, int);
-
-int main(){
-    int ch, element,pr, pop;
-    printf("\n");
-    while(1){
-        printf("\n**  OPERATIONS  **\n");
-        printf("\n 1.Insert\n 2.Delete\n 3.Display\n 4.Exit\n Enter your choice: ")
-        scanf("%d", &ch);
-        switch(ch){
-            case 1: printf("Enter the value and its priority");
-                    scanf("%d", &pr);
-                    insert(element, pr);
-                    break;
-            case 2: pop = pop1();
-                    printf("\n Deleted item is:  %d", pop);
-                    break;
-            case 3: printf("\nPriority Queue is : \t");
-                    display();
-                    break;
-            case 4: exit(1);
-                    break;
-            default: printf("\nInvalid Choice");
-                    break;
+#define MAX 5
+void insert_by_priority(int);
+void delete_by_priority(int);
+void create();
+void check(int);
+void display_pqueue();
+int pri_que[MAX];
+int front, rear;
+void main() {
+    int n, ch;
+    printf("\n1 - Insert an element into queue");
+    printf("\n2 - Delete an element from queue");
+    printf("\n3 - Display queue elements");
+    printf("\n4 - Exit");
+    create();
+    while (1) {
+        printf("\nEnter your choice : ");
+        scanf("%d", & ch);
+        switch (ch) {
+        case 1:
+            printf("\nEnter value to be inserted : ");
+            scanf("%d", & n);
+            insert_by_priority(n);
+            break;
+        case 2:
+            printf("\nEnter value to delete : ");
+            scanf("%d", & n);
+            delete_by_priority(n);
+            break;
+        case 3:
+            display_pqueue();
+            break;
+        case 4:
+            exit(0);
+        default:
+            printf("\nChoice is incorrect, Enter a correct choice");
         }
     }
-    return 0;
 }
-
-void setValue(int i, int element, int pr){
-    int j;
-    for(j=rear-1; j>=i; j--){
-        pQ[j+1][0]=pQ[j][0];
-        pQ[j+1][1]=pQ[j][1];
-    }
-    pQ[i][0]=element;
-    pQ[i][1]=pr;
-
+void create() {
+    front = rear = -1;
 }
-
-void insert(int element, int pr){
-    if(rear==14 ){
-        printf("\nYour queue is full..");
+void insert_by_priority(int data) {
+    if (rear >= MAX - 1) {
+        printf("\nQueue overflow no more elements can be inserted");
+        return;
     }
-    else if(rear==-1){
-        rear++;
+    if ((front == -1) && (rear == -1)) {
         front++;
-        pQ[rear][0]=element;
-        pQ[rear][1]=pr;
-    }
-    else {
-        int i ;
         rear++;
-        if(pQ[0][1]>pr && rear ==1){
-            pQ[rear][0]=element;
-            pQ[rear][1]=pr;
-        }
-        else if(pQ[0][1]<pr && rear == 1){
-            pQ[rear][0]=pQ[rear-1][0];
-            pQ[rear][1]=pQ[rear-1][1];
-            pQ[rear-1][0]=element;
-            pQ[rear-1][1]=pr;
-        }
-        else if(rear >1){
-            for(i=0; i<=rear; i++){
-                if((i!=rear-1) && (pQ[i][1]>=pr && pQ[i+1][1]<pr)){
-                    setValue(i+1,element, pr);
-                    break;
-                }
-                if((i!=rear-1) && (pQ[i][1]>pr && pQ[i+1][1]<=pr)){
-                    setValue(i+2,element, pr);
-                    break;
-                }
-                else if((i!=rear-1) && (pQ[i][1]<pr) ){
-                    setValue(i,element, pr);
-                    break;
-                }
-                else if(i==rear-1){
-                    pQ[rear][0]=element;
-                    pQ[rear][1]=pr;
-                    break;
-                }
-            }
-        }
-    }
+        pri_que[rear] = data;
+        return;
+    } else
+        check(data);
+    rear++;
 }
-int pop1(){
-    if(front==-1 || front>rear){
-        printf("\nUnderflow");
-    }
-    else{
-        int popOut = pQ[front][0];
-        front++;
-        return popOut;
-    }
-}
- void display(){
-     if(front==-1){
-         printf("\nEmpty Queue..");
-     }
-     else {
-         int k,j;
-         for(k=front; k<=rear; k++){
-            for(j=0; j<2; j++){
-                printf("%d\t", pQ[k][j]);
-                if(j==1){
-                    printf("\n");
-                }
+void check(int data) {
+    int i, j;
+    for (i = 0; i <= rear; i++) {
+        if (data >= pri_que[i]) {
+            for (j = rear + 1; j > i; j--) {
+                pri_que[j] = pri_que[j - 1];
             }
-         }
-     }
- }
+            pri_que[i] = data;
+            return;
+        }
+    }
+    pri_que[i] = data;
+}
+void delete_by_priority(int data) {
+    int i;
+    if ((front == -1) && (rear == -1)) {
+        printf("\nQueue is empty no elements to delete");
+        return;
+    }
+    for (i = 0; i <= rear; i++) {
+        if (data == pri_que[i]) {
+            for (; i < rear; i++) {
+                pri_que[i] = pri_que[i + 1];
+            }
+            pri_que[i] = -99;
+            rear--;
+            if (rear == -1)
+                front = -1;
+            return;
+        }
+    }
+    printf("\n%d not found in queue to delete", data);
+}
+void display_pqueue() {
+    if ((front == -1) && (rear == -1)) {
+        printf("\nQueue is empty");
+        return;
+    }
+    for (; front <= rear; front++) {
+        printf(" %d ", pri_que[front]);
+    }
+    front = 0;
+}
