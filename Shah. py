@@ -1,0 +1,3 @@
+def greet(name,wish):
+	   print("hai",name,",",wish)
+greet("shah","how are you")
