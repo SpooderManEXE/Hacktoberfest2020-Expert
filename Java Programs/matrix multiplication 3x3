@@ -1,0 +1,50 @@
+import java.util.*;
+
+ // Compiler version JDK 11.0.2
+
+ class Dcoder
+ {
+   public static void main(String args[])
+   { 
+     int i,j;
+    int[][] a=new int[10][10];
+    int[][] b=new int[10][10];
+    for(i=0;i<3;i++)
+    {
+    for(j=0;j<3;j++)
+    {
+     a[i][j]=(i+j+4);
+     b[i][j]=(i+j+3);
+    }
+    }
+    System.out.println("1st matrix\n");
+    for(i=0;i<3;i++)
+    {
+    for(j=0;j<3;j++)
+      System.out.print(a[i][j]+" ");
+    System.out.println();
+    }
+    System.out.println("\n2st matrix\n");
+    for(i=0;i<3;i++)
+    {
+    for(j=0;j<3;j++)
+      System.out.print(b[i][j]+" ");
+    System.out.println();
+    }
+    int c[][]=new int[3][3];
+    for(i=0;i<3;i++)
+    for(j=0;j<3;j++)
+     {
+         c[i][j]=0;
+         for(int k=0;k<3;k++)
+         c[i][j]+=a[i][k]*b[k][j];
+      }
+    System.out.println("\nfinal matrix\n");
+    for(i=0;i<3;i++){
+    for(j=0;j<3;j++)
+      System.out.print(c[i][j]+" ");
+      System.out.println();
+      }
+
+ }
+    }
