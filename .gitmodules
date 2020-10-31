@@ -1,0 +1,3 @@
+[submodule "Python Programs/CodeCrush"]
+	path = Python Programs/CodeCrush
+	url = https://github.com/clebsonf/CodeCrush.git
