@@ -1,0 +1,18 @@
+import java.util.*;
+
+ // Compiler version JDK 11.0.2
+
+ class Dcoder
+ {
+   public static void main(String args[])
+   { 
+       System.out.println(); 
+       int count=0;
+      String str ="good afternoon";
+      for(int i=0;i<str.length();i++)
+      if(str.charAt(i)=='o')
+      count++;
+      System.out.println("The string ' "+str+" ' has "+count+" number  of character 'o'");
+      
+ }
+    } 
