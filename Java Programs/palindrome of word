@@ -1,0 +1,30 @@
+import java.util.*;
+
+ // Compiler version JDK 11.0.2
+
+ class Dcoder
+ {
+   public static void main(String args[])
+   { 
+      int c,a=0;
+      String str ="malayalam";
+      c=str.length();
+     // System.out.println(c);
+      for(int i=0;i<c;i++)
+      //System.out.println("->"+(c-i)+" & "+str.charAt(c-i));}
+     if(str.charAt(i)!=str.charAt(c-i-1))
+      {     
+        System.out.println(str.charAt(i)+"!=" + str.charAt(c-1-i));
+        System.out.println("the string "+str +" is not palindrome");
+        break;
+        }
+      else
+      a++;
+      if(a==c)
+      {
+      // System.out.println(str.charAt(i)+"=" + str.charAt(c-1-i));
+       System.out.println("The string '"+str+"' is palindrome");
+       }
+       
+ }}
+    
