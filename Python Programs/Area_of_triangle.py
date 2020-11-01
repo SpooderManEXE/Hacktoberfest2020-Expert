@@ -1,19 +1,12 @@
 # Python Program to find the area of triangle using Heron's Formula.
-
-a = 5
-b = 3
-c = 7
-
-# Uncomment below to take inputs from the user
-# a = float(input('Enter first side: '))
-# b = float(input('Enter second side: '))
-# c = float(input('Enter third side: '))
-
-# calculate the semi-perimeter
+#enter all the sides of triangle from user.
+ a = float(input('Enter first side: '))
+ b = float(input('Enter second side: '))
+ c = float(input('Enter third side: '))
+# now, using formula , calculate the semi-perimeter
 s = (a + b + c) / 2
-
-# calculate the area
+# and calculate the area
 area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+#now, print the output.
 print('The area of the triangle is %0.2f' %area)
-
-#output = The area of the triangle is 6.50
+#end of code.
