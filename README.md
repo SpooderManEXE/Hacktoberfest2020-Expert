@@ -1,4 +1,4 @@
-# UPDATE: No longer merging PR's. Thank You for all the participation.
+# **UPDATE:** No longer merging PR's. Thank You for all the participation.
 
 
 <img align="center" height="200" src="https://github.com/Ishaan28malik/Hacktoberfest-2020/blob/master/Assets/Selection_026.png"/>
